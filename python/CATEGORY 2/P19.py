@@ -1,0 +1,13 @@
+def Anagrams(li ):
+    dictionary = {}
+    for word in li:
+        sortedWord = ''.join(sorted(word))
+        print(sortedWord)
+        if sortedWord not in dictionary:
+            dictionary[sortedWord] = [word]
+        else:
+            dictionary[sortedWord] += [word]
+    return [dictionary[i] for i in dictionary]
+
+li = ['pop','bat','tab','opp','cat']
+print(Anagrams(li))
